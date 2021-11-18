@@ -1,13 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import NavBar from '../components/NavBar';
-import Standings from './Standings';
+import StandingsContainer from '../containers/Standings';
 import Team from './Team';
 
 const App = () => (
   <BrowserRouter>
     <div className="App">
       <Routes>
-        <Route path="/" element={<Standings />} />
+        <Route path="/" element={<StandingsContainer />} />
         <Route path="/team" element={<Team />} />
       </Routes>
     </div>

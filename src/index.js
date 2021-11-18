@@ -1,12 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
+const initState = {
+  books: [
+    {
+      id: 1,
+      title: 'The New Man',
+      category: 'History',
+    },
+    {
+      id: 2,
+      title: 'Human Error',
+      category: 'Action',
+    },
+    {
+      id: 3,
+      title: 'Aztec Blood',
+      category: 'History',
+    },
+  ],
+};
+
+const rootReducer = () => initState;
+
+const store = createStore(rootReducer);
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
