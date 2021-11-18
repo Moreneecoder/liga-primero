@@ -35,7 +35,51 @@ const Standings = () => {
         <h1>LA LIGA</h1>
         {leagueTable[0].league.standings[0].map((item) => {
           const { rank } = item;
-          return (<li key={rank} style={{ color: 'red' }}>{item.team.name}</li>);
+          return (
+            <div key={rank} style={{ backgroundColor: 'maroon' }}>
+              <span style={{ color: 'red' }}>
+                {rank}
+                .
+                {' '}
+                {item.team.name}
+              </span>
+              {' '}
+              <span>
+                P:
+                {item.all.played}
+              </span>
+              {' '}
+              <span>
+                W:
+                {item.all.win}
+              </span>
+              {' '}
+              <span>
+                D:
+                {item.all.draw}
+              </span>
+              {' '}
+              <span>
+                L:
+                {item.all.lose}
+              </span>
+              {' '}
+              <span>
+                GF:
+                {item.all.goals.for}
+              </span>
+              {' '}
+              <span>
+                GA:
+                {item.all.goals.against}
+              </span>
+              {' '}
+              <span>
+                PTS:
+                {item.points}
+              </span>
+            </div>
+          );
         })}
       </div>
     );
