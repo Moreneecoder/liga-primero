@@ -1,5 +1,4 @@
-import { /* connect, */ useDispatch, useSelector } from 'react-redux';
-// import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import refreshTable from '../actions';
 
@@ -8,7 +7,6 @@ const Standings = () => {
   console.log(stated);
   const leagueTable = useSelector((state) => state.standings);
   const dispatch = useDispatch();
-  //   const { standings, refreshExistingTable } = props;
 
   useEffect(() => {
     fetch('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', {
@@ -21,7 +19,6 @@ const Standings = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // console.log(refreshTable(data.response));
         dispatch(refreshTable(data.response));
       })
       .catch((err) => {
@@ -46,30 +43,5 @@ const Standings = () => {
 
   return null;
 };
-
-// Standings.defaultProps = {
-//   standings: ['I be default sha'],
-// };
-
-// Standings.propTypes = {
-//   standings: PropTypes.arrayOf(PropTypes.shape({
-//     id: PropTypes.number.isRequired,
-//     title: PropTypes.string.isRequired,
-//     category: PropTypes.string.isRequired,
-//   })),
-//   refreshExistingTable: PropTypes.func.isRequired,
-// };
-
-// const mapStateToProps = (state) => ({
-//   standings: state.standings,
-// });
-
-// const mapDispatchToProps = (dispatch) => ({
-//   refreshExistingTable: (table) => {
-//     dispatch(refreshTable(table));
-//   },
-// });
-
-// const StandingsContainer = connect(mapStateToProps, mapDispatchToProps)(Standings);
 
 export default Standings;
