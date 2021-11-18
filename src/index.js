@@ -2,31 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import rootReducer from './reducers';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-
-const initState = {
-  books: [
-    {
-      id: 1,
-      title: 'The New Man',
-      category: 'History',
-    },
-    {
-      id: 2,
-      title: 'Human Error',
-      category: 'Action',
-    },
-    {
-      id: 3,
-      title: 'Aztec Blood',
-      category: 'History',
-    },
-  ],
-};
-
-const rootReducer = () => initState;
 
 const store = createStore(rootReducer);
 
