@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import useHttp from '../hooks/http';
+// import useHttp from '../hooks/http';
 
 const Team = () => {
   const location = useLocation();
@@ -8,9 +8,8 @@ const Team = () => {
   // console.log(location.state);
   const leagueTable = useSelector((state) => state.standings);
 
-  useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
+  // useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
 
-  console.log(leagueTable);
   if (leagueTable[0]) {
     const standings = leagueTable[0].league.standings[0];
     const team = standings[id - 1];

@@ -1,19 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
 // import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import useHttp from '../hooks/http';
+// import useHttp from '../hooks/http';
 import TableFilter from '../components/TableFilter';
 import { filterTable } from '../actions';
 import getStandingsByFilter from '../logic/filterFuncs';
 
 const Standings = () => {
-  const stated = useSelector((state) => state);
-  console.log(stated);
   const leagueTable = useSelector((state) => state.standings);
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
 
-  useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
+  // useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
 
   const handleFilterChange = (filter) => {
     dispatch(filterTable(filter));
@@ -25,7 +23,6 @@ const Standings = () => {
 
     return (
       <div className="Standings">
-        { console.log(leagueTable) }
         <h1>LA LIGA</h1>
         <TableFilter handleChange={handleFilterChange} />
 

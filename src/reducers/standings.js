@@ -1,6 +1,6 @@
 const standingsReducer = (state = [], action) => {
   let output;
-  console.log(action);
+
   switch (action.type) {
     case 'REFRESH_TABLE':
       output = action.latestTable;
@@ -8,7 +8,7 @@ const standingsReducer = (state = [], action) => {
     default:
       output = state;
   }
-  console.log(output);
+
   return output;
 };
 
