@@ -3,15 +3,8 @@ const standingsReducer = (state = [], action) => {
   console.log(action);
   switch (action.type) {
     case 'REFRESH_TABLE':
-      // output = [
-      //   ...state,
-      //   action.book,
-      // ];
       output = action.latestTable;
       break;
-    //   case 'REMOVE_BOOK':
-    //     output = state.filter((book) => book.id !== action.book.id);
-    //     break;
     default:
       output = state;
   }
