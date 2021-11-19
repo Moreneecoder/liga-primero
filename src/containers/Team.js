@@ -1,34 +1,15 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { refreshTable } from '../actions';
+import useHttp from '../hooks/http';
 
 const Team = () => {
   const location = useLocation();
   const { id } = location.state;
   // console.log(location.state);
   const leagueTable = useSelector((state) => state.standings);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    fetch('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', {
-      method: 'GET',
-      headers: {
-        'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-        'x-rapidapi-key': 'ac39b316e0msh7d2b82002789670p10a6e9jsna343b2d68ca3',
-      },
-      mode: 'cors',
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        dispatch(refreshTable(data.response));
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+  useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
 
-    console.log('Teams Effects');
-  }, []);
   console.log(leagueTable);
   if (leagueTable[0]) {
     const standings = leagueTable[0].league.standings[0];
