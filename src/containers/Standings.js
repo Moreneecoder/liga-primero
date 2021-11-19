@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import TableFilter from '../components/TableFilter';
 import { refreshTable, filterTable } from '../actions';
 import getStandingsByFilter from '../logic/filterFuncs';
@@ -28,7 +29,7 @@ const Standings = () => {
         console.error(err);
       });
 
-    console.log('Shitty Effects');
+    console.log('Standings Effects');
   }, []);
 
   const handleFilterChange = (filter) => {
@@ -47,14 +48,20 @@ const Standings = () => {
 
         {filteredData().map((item) => {
           const { rank } = item;
+
           return (
             <div key={rank} style={{ backgroundColor: 'maroon' }}>
-              <span style={{ color: 'red' }}>
+              <Link
+                style={{ color: 'red' }}
+                index={rank}
+                to="/team"
+                state={{ id: rank }}
+              >
                 {rank}
                 .
                 {' '}
                 {item.team.name}
-              </span>
+              </Link>
               {' '}
               <span>
                 P:

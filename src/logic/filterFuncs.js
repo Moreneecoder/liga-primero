@@ -34,6 +34,4 @@ const getStandingsByFilter = (table, filter) => {
   return output;
 };
 
-// books.filter((book) => book.category === filter)
-
 export default getStandingsByFilter;

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Standings from '../containers/Standings';
-import Team from './Team';
+import Team from '../containers/Team';
 
 const App = () => (
   <BrowserRouter>
