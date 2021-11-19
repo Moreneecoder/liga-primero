@@ -6,6 +6,7 @@ const useHttp = (url, dependencies) => {
   const dispatch = useDispatch();
   //   'https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140'
   useEffect(() => {
+    console.log('Sending Request to Server');
     fetch(url, {
       method: 'GET',
       headers: {
@@ -21,7 +22,6 @@ const useHttp = (url, dependencies) => {
       .catch((err) => {
         console.error(err);
       });
-    console.log('Standings Effects');
   }, dependencies);
 };
 
