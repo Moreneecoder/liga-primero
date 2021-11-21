@@ -33,7 +33,23 @@ const Team = () => {
     );
   }
 
-  return null;
+  return (
+    <div className="Team pt-5">
+      <div className="teamCard card main-bg-color col-md-5 p-3 mx-auto text-center">
+        <div className="image text-center">
+          <img className="team-logo" src="https://media.api-sports.io/football/teams/541.png" alt="team-logo" />
+        </div>
+        <h4>Real Madrid</h4>
+        <div className="team-form d-flex mx-auto">
+          <div className="bg-success px-1 mx-1 rounded">W</div>
+          <div className="bg-success px-1 mx-1 rounded">W</div>
+          <div className="bg-danger px-2 mx-1 rounded">L</div>
+          <div className="bg-success px-1 mx-1 rounded">W</div>
+          <div className="bg-secondary px-1 mx-1 rounded">D</div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Team;

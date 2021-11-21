@@ -1,3 +1,8 @@
 body {
   color: white;
+  background: linear-gradient(to left, #093637, #44a08d);
+}
+
+.main-bg-color {
+  background: #088f8f;
 }

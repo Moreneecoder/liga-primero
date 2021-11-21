@@ -22,47 +22,48 @@ const Standings = () => {
     const filteredData = () => (filter === 'General' ? standings : getStandingsByFilter(standings, filter));
 
     return (
-      <div className="Standings mx-md-5">
+      <div className="Standings mx-1 mx-md-5">
         <h1>LA LIGA</h1>
+        <div className="alert alert-success">Click on a team&apos;s name to get more info about them.</div>
         <TableFilter handleChange={handleFilterChange} />
 
-        <div className="standRow justify-content-between">
+        <div className="standRow standHeading justify-content-between">
           <div className="leftData d-flex">
             <div className="rank" />
             <div className="image" />
             <div
-              className="team-name text-center fw-bolder"
+              className="team-name heading text-center fw-bolder"
             >
               Team
             </div>
           </div>
 
           <div className="middleData d-flex d-md-none text-center">
-            <div className="stand-data fw-bolder">P</div>
-            <div className="stand-data fw-bolder">W</div>
-            <div className="stand-data fw-bolder">D</div>
-            <div className="stand-data fw-bolder">L</div>
-            <div className="stand-data fw-bolder">GF</div>
-            <div className="stand-data fw-bolder">GA</div>
+            <div className="stand-data fw-bolder heading">P</div>
+            <div className="stand-data fw-bolder heading">W</div>
+            <div className="stand-data fw-bolder heading">D</div>
+            <div className="stand-data fw-bolder heading">L</div>
+            <div className="stand-data fw-bolder heading">GF</div>
+            <div className="stand-data fw-bolder heading">GA</div>
           </div>
 
           <div className="middleData d-none d-md-flex text-center">
-            <div className="stand-data fw-bolder">Played</div>
-            <div className="stand-data fw-bolder">Win</div>
-            <div className="stand-data fw-bolder">Draw</div>
-            <div className="stand-data fw-bolder">Loss</div>
-            <div className="stand-data fw-bolder">GF</div>
-            <div className="stand-data fw-bolder">GA</div>
+            <div className="stand-data fw-bolder heading">Played</div>
+            <div className="stand-data fw-bolder heading">Win</div>
+            <div className="stand-data fw-bolder heading">Draw</div>
+            <div className="stand-data fw-bolder heading">Loss</div>
+            <div className="stand-data fw-bolder heading">GF</div>
+            <div className="stand-data fw-bolder heading">GA</div>
           </div>
 
           <div className="rightData d-flex d-md-none text-center">
-            <div className="stand-data fw-bolder">GD</div>
-            <div className="stand-data fw-bolder">Pts</div>
+            <div className="stand-data fw-bolder heading">GD</div>
+            <div className="stand-data fw-bolder heading">Pts</div>
           </div>
 
           <div className="rightData d-none d-md-flex text-center">
-            <div className="stand-data fw-bolder">GoalsDiff</div>
-            <div className="stand-data fw-bolder">Points</div>
+            <div className="stand-data fw-bolder heading">GoalsDiff</div>
+            <div className="stand-data fw-bolder heading">Points</div>
           </div>
         </div>
 
@@ -71,7 +72,7 @@ const Standings = () => {
 
           return (
 
-            <div key={rank} className="standRow justify-content-between">
+            <div key={rank} className="standRow standBody justify-content-between">
 
               <div className="leftData d-flex">
                 <div className="rank">
