@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 // import useHttp from '../hooks/http';
+import '../stylesheets/Team.css';
 
 const Team = () => {
   const location = useLocation();
   const { id } = location.state;
-  // console.log(location.state);
+
   const leagueTable = useSelector((state) => state.standings);
 
   // useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);

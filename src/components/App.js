@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import '../stylesheets/App.css';
 import Standings from '../containers/Standings';
 import Team from '../containers/Team';
 
