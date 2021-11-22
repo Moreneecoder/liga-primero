@@ -1,17 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../stylesheets/Standings.css';
-import useHttp from '../hooks/http';
+// import useHttp from '../hooks/http';
 import TableFilter from '../components/TableFilter';
 import { filterTable } from '../actions';
 import getStandingsByFilter from '../logic/filterFuncs';
+import cancelImg from '../images/cancel.svg';
 
 const Standings = () => {
   const leagueTable = useSelector((state) => state.standings);
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
 
-  useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
+  // useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
 
   const handleFilterChange = (filter) => {
     dispatch(filterTable(filter));
@@ -118,82 +119,10 @@ const Standings = () => {
   }
 
   return (
-    <div className="Standings mx-md-5">
-      <div className="standRow justify-content-between">
-
-        <div className="leftData d-flex">
-          <div className="rank" />
-          <div className="image" />
-          <div
-            className="team-name text-center fw-bolder"
-          >
-            Team
-          </div>
-        </div>
-
-        <div className="middleData d-flex d-md-none text-center">
-          <div className="stand-data fw-bolder">P</div>
-          <div className="stand-data fw-bolder">W</div>
-          <div className="stand-data fw-bolder">D</div>
-          <div className="stand-data fw-bolder">L</div>
-          <div className="stand-data fw-bolder">GF</div>
-          <div className="stand-data fw-bolder">GA</div>
-        </div>
-
-        <div className="middleData d-none d-md-flex text-center">
-          <div className="stand-data fw-bolder">Played</div>
-          <div className="stand-data fw-bolder">Win</div>
-          <div className="stand-data fw-bolder">Draw</div>
-          <div className="stand-data fw-bolder">Lose</div>
-          <div className="stand-data fw-bolder">GF</div>
-          <div className="stand-data fw-bolder">GA</div>
-        </div>
-
-        <div className="rightData d-flex d-md-none text-center">
-          <div className="stand-data fw-bolder">GD</div>
-          <div className="stand-data fw-bolder">Pts</div>
-        </div>
-
-        <div className="rightData d-none d-md-flex text-center">
-          <div className="stand-data fw-bolder">GoalsDiff</div>
-          <div className="stand-data fw-bolder">Points</div>
-        </div>
-      </div>
-
-      <div className="standRow justify-content-between">
-
-        <div className="leftData d-flex">
-          <div className="rank">17.</div>
-          <div className="image text-center">
-            <img className="team-logo" src="https://media.api-sports.io/football/teams/529.png" alt="team-logo" />
-          </div>
-          <Link
-            className="team-name text-center fw-bolder"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-            index="1"
-            to="/team"
-          >
-            Barcelona
-          </Link>
-        </div>
-
-        <div className="middleData d-flex text-center">
-          <div className="stand-data">17</div>
-          <div className="stand-data">10</div>
-          <div className="stand-data">5</div>
-          <div className="stand-data">2</div>
-          <div className="stand-data">21</div>
-          <div className="stand-data">14</div>
-        </div>
-
-        <div className="rightData d-flex text-center">
-          <div className="stand-data">7</div>
-          <div className="stand-data fw-bolder">35</div>
-        </div>
-      </div>
+    <div className="Standings px-1 px-md-0 col-12 col-md-6 mx-auto my-auto text-center">
+      <img className="mb-3" style={{ width: '50%' }} src={cancelImg} alt="not-found" />
+      <div className="alert alert-danger p-2">Could not fetch standings! Please refresh or check your internet connection..</div>
+      <button type="button" onClick={() => window.location.reload()} className="text-white btn btn-md btn-md-lg main-bg-color">&#8635; Refresh Page</button>
     </div>
   );
 };

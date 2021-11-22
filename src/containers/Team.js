@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 // import useHttp from '../hooks/http';
 import '../stylesheets/Team.css';
+import cancelImg from '../images/cancel.svg';
 
 const Team = () => {
   const location = useLocation();
@@ -15,22 +16,6 @@ const Team = () => {
     const standings = leagueTable[0].league.standings[0];
     const team = standings[id - 1];
     return (
-    // <div className="Team">
-    //   <h1>Single Team Page</h1>
-    //   <h2><img src={team.team.logo} alt="team-logo" /></h2>
-    //   <h2>{team.team.name}</h2>
-    //   <ul>
-    //     <li>{team.form}</li>
-    //     <li>{team.all.played}</li>
-    //     <li>{team.all.win}</li>
-    //     <li>{team.all.draw}</li>
-    //     <li>{team.all.lose}</li>
-    //     <li>{team.all.goals.for}</li>
-    //     <li>{team.all.goals.against}</li>
-    //     <li>{team.goalsDiff}</li>
-    //   </ul>
-    // </div>
-
       <div className="Team pt-5">
         <div className="teamCard card main-bg-color col-11 col-md-7 col-lg-5 p-3 mx-auto text-center">
           <div className="image text-center">
@@ -93,7 +78,13 @@ const Team = () => {
     );
   }
 
-  return 'Could not fetch data!';
+  return (
+    <div className="Team px-1 px-md-0 col-12 col-md-6 mx-auto my-auto text-center">
+      <img className="mb-3" style={{ width: '50%' }} src={cancelImg} alt="not-found" />
+      <div className="alert alert-danger p-2">Could not fetch data! Please go back to standings to select a team.</div>
+      <Link to="/" className="text-white btn btn-md btn-md-lg main-bg-color">&#8592; Go Back To standings</Link>
+    </div>
+  );
 };
 
 export default Team;
