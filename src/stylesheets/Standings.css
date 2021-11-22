@@ -1,5 +1,5 @@
 .Standings {
-  padding-top: 10%;
+  padding-top: 15%;
 }
 
 .standRow {
@@ -27,12 +27,19 @@
   flex-basis: 15%;
 }
 
+.leftData,
+.middleData,
+.rightData {
+  font-size: 0.7em;
+}
+
 .rank {
   flex-basis: 10%;
 }
 
 .image {
-  flex-basis: 20%;
+  flex-basis: 30%;
+  height: 100%;
 }
 
 .team-name {
@@ -49,12 +56,44 @@
   flex: 1;
 }
 
-.team-logo {
-  width: 80%;
+.league-logo {
+  width: 80px;
+}
+
+@media only screen and (min-width: 500px) {
+  .Standings {
+    padding-top: 12%;
+  }
+
+  .leftData,
+  .middleData,
+  .rightData {
+    font-size: 0.8em;
+  }
+
+  .team-logo {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  .Standings {
+    padding-top: 8%;
+  }
+
+  .leftData,
+  .middleData,
+  .rightData {
+    font-size: 1em;
+  }
+
   .team-logo {
     width: 50%;
   }
 }
+
+/* @media only screen and (min-width: 1024px) {
+  .Standings {
+    padding-top: 7%;
+  }
+} */

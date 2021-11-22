@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../stylesheets/Standings.css';
-// import useHttp from '../hooks/http';
+import useHttp from '../hooks/http';
 import TableFilter from '../components/TableFilter';
 import { filterTable } from '../actions';
 import getStandingsByFilter from '../logic/filterFuncs';
@@ -12,7 +12,7 @@ const Standings = () => {
   const filter = useSelector((state) => state.filter);
   const dispatch = useDispatch();
 
-  // useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
+  useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
 
   const handleFilterChange = (filter) => {
     dispatch(filterTable(filter));
@@ -23,10 +23,15 @@ const Standings = () => {
     const filteredData = () => (filter === 'General' ? standings : getStandingsByFilter(standings, filter));
 
     return (
-      <div className="Standings mx-1 mx-md-5">
-        <h1>LA LIGA</h1>
-        <div className="alert alert-success">Click on a team&apos;s name to get more info about them.</div>
-        <TableFilter handleChange={handleFilterChange} />
+      <div className="Standings mx-1 mx-md-5 pb-5">
+        <div className="row">
+          <div className="col-4">
+            <img className="league-logo" src={leagueTable[0].league.logo} alt="team-logo" />
+          </div>
+          <div className="col-8 d-flex align-items-end">
+            <TableFilter handleChange={handleFilterChange} />
+          </div>
+        </div>
 
         <div className="standRow standHeading justify-content-between">
           <div className="leftData d-flex">
@@ -39,7 +44,7 @@ const Standings = () => {
             </div>
           </div>
 
-          <div className="middleData d-flex d-md-none text-center">
+          <div className="middleData d-flex d-lg-none text-center">
             <div className="stand-data fw-bolder heading">P</div>
             <div className="stand-data fw-bolder heading">W</div>
             <div className="stand-data fw-bolder heading">D</div>
@@ -48,7 +53,7 @@ const Standings = () => {
             <div className="stand-data fw-bolder heading">GA</div>
           </div>
 
-          <div className="middleData d-none d-md-flex text-center">
+          <div className="middleData d-none d-lg-flex text-center">
             <div className="stand-data fw-bolder heading">Played</div>
             <div className="stand-data fw-bolder heading">Win</div>
             <div className="stand-data fw-bolder heading">Draw</div>
@@ -57,12 +62,12 @@ const Standings = () => {
             <div className="stand-data fw-bolder heading">GA</div>
           </div>
 
-          <div className="rightData d-flex d-md-none text-center">
+          <div className="rightData d-flex d-lg-none text-center">
             <div className="stand-data fw-bolder heading">GD</div>
             <div className="stand-data fw-bolder heading">Pts</div>
           </div>
 
-          <div className="rightData d-none d-md-flex text-center">
+          <div className="rightData d-none d-lg-flex text-center">
             <div className="stand-data fw-bolder heading">GoalsDiff</div>
             <div className="stand-data fw-bolder heading">Points</div>
           </div>
@@ -80,7 +85,7 @@ const Standings = () => {
                   {rank}
                   .
                 </div>
-                <div className="image text-center">
+                <div className="image text-center border">
                   <img className="team-logo" src={item.team.logo} alt="team-logo" />
                 </div>
                 <Link

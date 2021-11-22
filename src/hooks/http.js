@@ -17,6 +17,7 @@ const useHttp = (url, dependencies) => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data.response);
         dispatch(refreshTable(data.response));
       })
       .catch((err) => {
