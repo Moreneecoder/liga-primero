@@ -68,7 +68,7 @@ const Standings = () => {
           </div>
 
           <div className="rightData d-none d-lg-flex text-center">
-            <div className="stand-data fw-bolder heading">GoalsDiff</div>
+            <div className="stand-data fw-bolder heading">GD</div>
             <div className="stand-data fw-bolder heading">Points</div>
           </div>
         </div>
@@ -85,7 +85,7 @@ const Standings = () => {
                   {rank}
                   .
                 </div>
-                <div className="image text-center border">
+                <div className="image text-center">
                   <img className="team-logo" src={item.team.logo} alt="team-logo" />
                 </div>
                 <Link

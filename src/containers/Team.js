@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-// import useHttp from '../hooks/http';
+import useHttp from '../hooks/http';
 import '../stylesheets/Team.css';
 import cancelImg from '../images/cancel.svg';
 
@@ -10,11 +10,31 @@ const Team = () => {
 
   const leagueTable = useSelector((state) => state.standings);
 
-  // useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
+  useHttp('https://api-football-v1.p.rapidapi.com/v3/standings?season=2021&league=140', []);
 
   if (leagueTable[0]) {
     const standings = leagueTable[0].league.standings[0];
     const team = standings[id - 1];
+    let key = 1;
+    const teamForm = team.form.split('').map((item) => {
+      let output;
+      switch (item) {
+        case 'W':
+          output = <div key={key} className="bg-success px-1 mx-1 rounded">W</div>;
+          break;
+        case 'L':
+          output = <div key={key} className="bg-danger px-1 mx-1 rounded">L</div>;
+          break;
+        case 'D':
+          output = <div key={key} className="bg-secondary px-1 mx-1 rounded">D</div>;
+          break;
+        default:
+          output = null;
+      }
+      key += 1;
+      return output;
+    });
+
     return (
       <div className="Team pt-5">
         <div className="teamCard card main-bg-color col-11 col-md-7 col-lg-5 p-3 mx-auto text-center">
@@ -23,11 +43,7 @@ const Team = () => {
           </div>
           <h4>{team.team.name}</h4>
           <div className="team-form d-flex mx-auto">
-            <div className="bg-success px-1 mx-1 rounded">W</div>
-            <div className="bg-success px-1 mx-1 rounded">W</div>
-            <div className="bg-danger px-2 mx-1 rounded">L</div>
-            <div className="bg-success px-1 mx-1 rounded">W</div>
-            <div className="bg-secondary px-1 mx-1 rounded">D</div>
+            {teamForm.map((item) => item)}
           </div>
 
           <div className="row">

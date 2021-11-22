@@ -6,7 +6,6 @@ const useHttp = (url, dependencies) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('Sending Request to Server');
     fetch(url, {
       method: 'GET',
       headers: {
@@ -17,7 +16,6 @@ const useHttp = (url, dependencies) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.response);
         dispatch(refreshTable(data.response));
       })
       .catch((err) => {
