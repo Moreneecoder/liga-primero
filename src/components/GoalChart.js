@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import '../stylesheets/Fixtures.css';
+import '../stylesheets/GoalChart.css';
 import goalie from '../images/goalie.svg';
 
-const Fixtures = () => (
-  <div className="Fixtures px-1 px-md-0 col-12 col-md-6 mx-auto text-center">
+const GoalChart = () => (
+  <div className="GoalChart px-1 px-md-0 col-12 col-md-6 mx-auto text-center">
     <img className="mb-3" style={{ width: '50%' }} src={goalie} alt="not-found" />
     <div className="alert alert-info p-2">
-      <span className="fw-bolder">Fixtures</span>
+      <span className="fw-bolder">Goal Chart</span>
       {' '}
       Feature Coming Soon! In the Pipes...
     </div>
@@ -14,4 +14,4 @@ const Fixtures = () => (
   </div>
 );
 
-export default Fixtures;
+export default GoalChart;

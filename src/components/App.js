@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Standings from '../containers/Standings';
 import Team from '../containers/Team';
 import Fixtures from './Fixtures';
+import GoalChart from './GoalChart';
 
 const App = () => (
   <BrowserRouter>
@@ -13,6 +14,7 @@ const App = () => (
         <Route path="/" element={<Standings />} />
         <Route path="/team" element={<Team />} />
         <Route path="/fixtures" element={<Fixtures />} />
+        <Route path="/goalchart" element={<GoalChart />} />
       </Routes>
     </div>
   </BrowserRouter>
