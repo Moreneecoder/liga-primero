@@ -3,6 +3,7 @@ import '../stylesheets/App.css';
 import Navbar from './Navbar';
 import Standings from '../containers/Standings';
 import Team from '../containers/Team';
+import Fixtures from './Fixtures';
 
 const App = () => (
   <BrowserRouter>
@@ -11,6 +12,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Standings />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/fixtures" element={<Fixtures />} />
       </Routes>
     </div>
   </BrowserRouter>

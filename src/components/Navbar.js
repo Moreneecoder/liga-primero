@@ -13,7 +13,7 @@ const Navbar = () => (
             <Link className="nav-link active text-white" aria-current="page" to="/">Standings</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-white" to="/">Fixtures</Link>
+            <Link className="nav-link text-white" to="/fixtures">Fixtures</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link text-white" to="/">Goal Chart</Link>
