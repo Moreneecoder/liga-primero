@@ -1,5 +1,6 @@
 .Team {
-  margin-top: 10%;
+  margin-top: 17%;
+  padding-top: 20%;
 }
 
 .team-logo {
@@ -12,4 +13,11 @@
 
 .alt-color {
   background-color: #44a08d;
+}
+
+@media only screen and (min-width: 768px) {
+  .Team {
+    margin-top: 5%;
+    padding-top: 8%;
+  }
 }

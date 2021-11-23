@@ -95,7 +95,7 @@ const Team = () => {
   }
 
   return (
-    <div className="Team px-1 px-md-0 col-12 col-md-6 mx-auto my-auto text-center">
+    <div className="Team px-1 px-md-0 col-12 col-md-6 mx-auto text-center">
       <img className="mb-3" style={{ width: '50%' }} src={cancelImg} alt="not-found" />
       <div className="alert alert-danger p-2">Could not fetch data! Please go back to standings to select a team.</div>
       <Link to="/" className="text-white btn btn-md btn-md-lg main-bg-color">&#8592; Go Back To standings</Link>
