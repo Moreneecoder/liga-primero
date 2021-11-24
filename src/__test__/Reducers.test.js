@@ -1,4 +1,5 @@
 import standingsReducer from '../reducers/standings';
+import filterReducer from '../reducers/filter';
 
 const state = [];
 const action = {
@@ -27,4 +28,23 @@ describe('Reducers Tests', () => {
       expect(standingsReducer(state, action)).toEqual([]);
     });
   });
+
+
+  describe('filterReducer Tests', () => {
+    const state = 'General';
+    const filterAction = {
+      type: 'FILTER_TABLE',
+      filter: 'ucl spot'
+    }
+    
+  test('returns passed in filter and return general if no filter is passed', () => {
+    expect(filterReducer(state, filterAction)).toEqual('ucl spot');
+  });
+
+  test('expects filter data to be string', () => {
+    expect(typeof filterReducer(state, filterAction)).toBe('string');
+  })
 });
+});
+
+
