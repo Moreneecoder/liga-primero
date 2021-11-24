@@ -1,70 +1,83 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LigaPrimero
 
-## Available Scripts
+A football app for monitoring the standings, fixtures, teams form and other data of the Spanish La Liga Football League.
 
-In the project directory, you can run:
 
-### `yarn start`
+## Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* React.js
+* Redux - For State management.
+* API-Football API - For footballing data.
+* CSS3/Bootstrap 5 - For User Interface design.
+* Jest - For unit and integrated testing.
+* Heroku - For deployment.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screenshots
+> Standings page
+![App Screenshot](https://user-images.githubusercontent.com/38987207/143244786-6e7f0cea-6b9e-43fa-b479-64cdc6c7d9d2.png)
 
-### `yarn test`
+> Team Details page
+![App Screenshot](https://user-images.githubusercontent.com/38987207/143245219-18340c8d-fc43-47ce-a991-b2abcbbf0aee.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> Coming Soon page
+![App Screenshot](https://user-images.githubusercontent.com/38987207/143245455-ce73e124-4350-435d-b6ba-570905fec12c.png)
 
-### `yarn build`
+## Live Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[ligaPrimero](https://liga-primero.herokuapp.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
+To set this project up locally, follow the steps below:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
+You should have the following tools installed on your machine:
+* [NodeJs](https://nodejs.org/en/)
+* [Node Package Manager (NPM)](https://www.npmjs.com/)
+* [React](https://reactjs.org/)
 
-### `yarn eject`
+### Setup
+* Open your computer command line interface/terminal
+* Navigate to the folder where you'll like to house the source code. E.g `cd documents/<SOME_FOLDER>
+* Run `git clone https://github.com/Moreneecoder/liga-primero.git` to download the project source to your chosen folder
+* You'll need to get an **API KEY** from RapidAPI. Follow [this guide](https://docs.rapidapi.com/docs/consumer-quick-start-guide) to subscribe and get your API KEY.
+* Create a .env file and add the `API_KEY` value with your newly generated **API KEY** like so `API_KEY=<YOUR_RAPID_API_KEY>`.
+* Run `npm install` to install all necessary dependencies for the project to run
+* Run `npm start` to intiate the local/development server. This will automatically open the project in your browser.
+* If for some reason, the browser doesn't run automatically, Open [http://localhost:3000](http://localhost:3000) to view it in the browser
+Voila! Your project is up and running...
+## Running Tests
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To run tests, run the following command
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  npm run test
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Authors
 
-## Learn More
+👤 **Bello Morenikeji Fuad**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- GitHub: [@moreenecoder](https://github.com/Moreneecoder)
+- Twitter: [@mo_bello19](https://twitter.com/mo_bello19)
+- LinkedIn: [Morenikeji Bello](https://linkedin.com/in/morenikeji-bello)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions, issues and feature requests are welcome!
 
-### Analyzing the Bundle Size
+Feel free to check the [issues page](https://github.com/Moreneecoder/liga-primero/issues).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Show your support
 
-### Making a Progressive Web App
+Give a ⭐️ if you like this project!
+## Acknowledgements
+ - [Microverse](https://microverse.org)
+ - [API-Football API](https://rapidapi.com/api-sports/api/api-football/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📝 License
 
-### Advanced Configuration
+This project is [MIT](./LICENSE) licensed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
