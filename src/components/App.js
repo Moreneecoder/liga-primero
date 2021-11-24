@@ -11,7 +11,7 @@ const App = () => (
       <Navbar />
       <Routes>
         <Route path="/" element={<Standings />} />
-        <Route path="/team" element={<Team />} />
+        <Route path="/team/:teamname" element={<Team />} />
         <Route path="/fixtures" element={<Fixtures />} />
         <Route path="/goalchart" element={<GoalChart />} />
       </Routes>

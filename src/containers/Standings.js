@@ -75,6 +75,7 @@ const Standings = () => {
 
         {filteredData().map((item) => {
           const { rank } = item;
+          const teamPath = `/team/${item.team.name.replace(' ', '_').toLowerCase()}`;
 
           return (
 
@@ -95,7 +96,7 @@ const Standings = () => {
                     textDecoration: 'none',
                   }}
                   index={rank}
-                  to="/team"
+                  to={teamPath}
                   state={{ id: rank }}
                 >
                   {item.team.name}
