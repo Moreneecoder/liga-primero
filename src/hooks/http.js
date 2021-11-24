@@ -7,7 +7,6 @@ const useHttp = (url, dependencies) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // console.log(env.A);
     fetch(url, {
       method: 'GET',
       headers: {

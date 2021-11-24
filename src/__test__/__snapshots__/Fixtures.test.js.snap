@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fixtures Component Renders Fixtures component as expected 1`] = `
+<div
+  className="Fixtures px-1 px-md-0 col-12 col-md-6 mx-auto text-center"
+>
+  <img
+    alt="not-found"
+    className="mb-3"
+    src="goalie.svg"
+    style={
+      Object {
+        "width": "50%",
+      }
+    }
+  />
+  <h3
+    className="alert alert-info p-2"
+  >
+    <span
+      className="fw-bolder"
+    >
+      Fixtures
+    </span>
+     
+    Feature Coming Soon! In the Pipes...
+  </h3>
+  <a
+    className="text-white btn btn-md btn-md-lg main-bg-color"
+    href="/"
+    onClick={[Function]}
+  >
+    ← Go Back To standings
+  </a>
+</div>
+`;
