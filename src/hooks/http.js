@@ -1,16 +1,18 @@
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import env from 'react-dotenv';
 import { refreshTable } from '../actions';
 
 const useHttp = (url, dependencies) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // console.log(env.A);
     fetch(url, {
       method: 'GET',
       headers: {
         'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
-        'x-rapidapi-key': 'ac39b316e0msh7d2b82002789670p10a6e9jsna343b2d68ca3',
+        'x-rapidapi-key': env.API_KEY,
       },
       mode: 'cors',
     })
