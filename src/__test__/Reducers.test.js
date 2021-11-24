@@ -15,8 +15,7 @@ const action = {
 describe('Reducers Tests', () => {
 
   describe('standingsReducer Tests', () => {
-    test('returns the correct updated state', () => {
-        // console.log(standingsReducer(state, action));
+    test('returns the correct updated state', () => {        
         expect(standingsReducer(state, action)[0]).toEqual({
             rank: '1',
             team: 'Barcelona',
@@ -25,8 +24,7 @@ describe('Reducers Tests', () => {
       });
 
       test('returns empty array state when wrong action type is passed', () => {
-        action.type = 'SOMETHING_ELSE';
-        console.log(standingsReducer(state, action));
+        action.type = 'SOMETHING_ELSE';        
         expect(standingsReducer(state, action)).toEqual([]);
       });
   });
