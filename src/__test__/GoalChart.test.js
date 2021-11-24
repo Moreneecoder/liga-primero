@@ -5,8 +5,8 @@ import GoalChart from '../components/GoalChart';
 describe('GoalChart Component', () => {
   test('Renders GoalChart component as expected', () => {
     const tree = renderer.create(<BrowserRouter>
-        <GoalChart />
-      </BrowserRouter>).toJSON();
+      <GoalChart />
+    </BrowserRouter>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

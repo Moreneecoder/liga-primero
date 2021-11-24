@@ -5,8 +5,8 @@ import Fixtures from '../components/Fixtures';
 describe('Fixtures Component', () => {
   test('Renders Fixtures component as expected', () => {
     const tree = renderer.create(<BrowserRouter>
-        <Fixtures />
-      </BrowserRouter>).toJSON();
+      <Fixtures />
+    </BrowserRouter>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
