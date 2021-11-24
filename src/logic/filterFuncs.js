@@ -1,7 +1,7 @@
 const filterByTopHalf = (data) => data.slice(0, 10);
 const filterByBottomHalf = (data) => data.slice(10, 20);
 const filterByUclSpot = (data) => data.slice(0, 4);
-const filterByEuropaSpot = (data) => data.slice(4, 8);
+const filterByEuropaSpot = (data) => data.slice(4, 7);
 const filterByRelegation = (data) => data.slice(17, 20);
 
 const getStandingsByFilter = (table, filter) => {
