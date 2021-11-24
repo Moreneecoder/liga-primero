@@ -20,7 +20,7 @@ const Team = () => {
       let output;
       switch (item) {
         case 'W':
-          output = <div key={key} className="bg-success px-1 mx-1 rounded">W</div>;
+          output = <div key={key} className="deep-bg-color px-1 mx-1 rounded">W</div>;
           break;
         case 'L':
           output = <div key={key} className="bg-danger px-1 mx-1 rounded">L</div>;
@@ -49,11 +49,11 @@ const Team = () => {
           <div className="row">
             <div className="offset-2 col-4">
               <div className="stand-data fw-bolder heading bg-light py-1 mt-2">Position</div>
-              <div className="stand-data fw-bolder bg-success text-white py-1">{team.rank}</div>
+              <div className="stand-data fw-bolder deep-bg-color text-white py-1">{team.rank}</div>
             </div>
 
             <div className="col-4">
-              <div className="fw-bolder bg-success text-white py-1 mt-2">Points</div>
+              <div className="fw-bolder deep-bg-color text-white py-1 mt-2">Points</div>
               <div className="fw-bolder heading bg-light py-1">35</div>
             </div>
           </div>
@@ -61,32 +61,32 @@ const Team = () => {
           <div className="row mt-4">
             <div className="col-4 mb-2">
               <div className="heading bg-light py-1">Played</div>
-              <div className="bg-success text-white py-1">{team.all.played}</div>
+              <div className="deep-bg-color text-white py-1">{team.all.played}</div>
             </div>
 
             <div className="col-4 mb-2">
-              <div className="bg-success text-white py-1">Win</div>
+              <div className="deep-bg-color text-white py-1">Win</div>
               <div className="heading bg-light py-1">{team.all.win}</div>
             </div>
 
             <div className="col-4 mb-2">
               <div className="heading bg-light py-1">Draw</div>
-              <div className="bg-success text-white py-1">{team.all.draw}</div>
+              <div className="deep-bg-color text-white py-1">{team.all.draw}</div>
             </div>
 
             <div className="col-4 mb-2">
               <div className="heading bg-light py-1">Loss</div>
-              <div className="bg-success text-white py-1">{team.all.lose}</div>
+              <div className="deep-bg-color text-white py-1">{team.all.lose}</div>
             </div>
 
             <div className="col-4 mb-2">
-              <div className="bg-success text-white py-1">Scored</div>
+              <div className="deep-bg-color text-white py-1">Scored</div>
               <div className="heading bg-light py-1">{team.all.goals.for}</div>
             </div>
 
             <div className="col-4 mb-2">
               <div className="heading bg-light py-1">Concede</div>
-              <div className="bg-success text-white py-1">{team.all.goals.against}</div>
+              <div className="deep-bg-color text-white py-1">{team.all.goals.against}</div>
             </div>
           </div>
         </div>
