@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../stylesheets/Fixtures.css';
+import '../stylesheets/ComingSoon.css';
 import goalie from '../images/goalie.svg';
 
 const Fixtures = () => (

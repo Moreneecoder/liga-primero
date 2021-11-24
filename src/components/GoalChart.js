@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../stylesheets/GoalChart.css';
+import '../stylesheets/ComingSoon.css';
 import footballer from '../images/footballer.svg';
 
 const GoalChart = () => (

@@ -1,9 +1,11 @@
-.Fixtures {
+.Fixtures,
+.GoalChart {
   padding-top: 30%;
 }
 
 @media only screen and (min-width: 768px) {
-  .Fixtures {
+  .Fixtures,
+  .GoalChart {
     padding-top: 15%;
   }
 }

@@ -18,9 +18,6 @@ const useHttp = (url, dependencies) => {
       .then((response) => response.json())
       .then((data) => {
         dispatch(refreshTable(data.response));
-      })
-      .catch((err) => {
-        console.error(err);
       });
   }, dependencies);
 };
