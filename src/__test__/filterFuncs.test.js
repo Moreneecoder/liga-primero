@@ -3,6 +3,14 @@ import getStandingsByFilter from '../logic/filterFuncs';
 const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
 describe('getStandingsByFilter', () => {
+  test('returned data must not be null', () => {
+    expect(getStandingsByFilter(data, 'Top Half')).not.toBeNull();
+  });
+
+  test('returned data must not be undefined', () => {
+    expect(getStandingsByFilter(data, 'Ucl Spot')).toBeDefined();
+  });
+
   test('returns indices 0 to 9, when Top Half filter is passed', () => {
     expect(getStandingsByFilter(data, 'Top Half')).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   });
