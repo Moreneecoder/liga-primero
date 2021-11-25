@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GoalChart Component Renders GoalChart component as expected 1`] = `
+<div
+  className="GoalChart px-1 px-md-0 col-12 col-md-6 mx-auto text-center"
+>
+  <img
+    alt="not-found"
+    className="mb-3"
+    src="footballer.svg"
+    style={
+      Object {
+        "width": "50%",
+      }
+    }
+  />
+  <h3
+    className="alert alert-info p-2"
+  >
+    <span
+      className="fw-bolder"
+    >
+      Goal Chart
+    </span>
+     
+    Feature Coming Soon! In the Pipes...
+  </h3>
+  <a
+    className="text-white btn btn-md btn-md-lg main-bg-color"
+    href="/"
+    onClick={[Function]}
+  >
+    ← Go Back To standings
+  </a>
+</div>
+`;
